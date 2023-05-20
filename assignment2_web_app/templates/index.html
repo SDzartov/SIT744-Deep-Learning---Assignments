@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Recyclable Identifier</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .uploaded-image {
+            margin-top: 20px;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Recyclable Identifier</h1>
+    <p>This web application can identify recyclable items using AI.</p>
+
+    <form method="POST" enctype="multipart/form-data" action="/">
+        <input type="file" name="image">
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if image_url %}
+        <img class="uploaded-image" src="{{ image_url }}" alt="Uploaded Image">
+    {% endif %}
+    
+</body>
+</html>
